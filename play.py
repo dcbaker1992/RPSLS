@@ -5,7 +5,7 @@ from gestures import Gestures
 
 class Play:
     def __init__(self):
-        self.player_one = Human("Player 1")
+        self.player_one = Human(input("Enter Player 1 Name"))
         self.player_two = Computer()
         self.round = 1
 
@@ -39,7 +39,7 @@ class Play:
 
     def rounds(self):
         try:
-            number = int(input("How many rounds must a player win?\n:"))
+            number = int(input("How many rounds must a player win?"))
             if number < 2:
                 print("Player Must Win at Least 2 Rounds")
                 return self.rounds()
