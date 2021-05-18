@@ -1,7 +1,7 @@
 from player import Player
 
 
-class Human:
+class Human(Player):
     def __init__(self, player):
-        player_input = input("Please Enter Player Name")
-        self.name = player_input
+        self.name = player
+        super().__init__()
