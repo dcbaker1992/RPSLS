@@ -57,10 +57,10 @@ class Play:
                                    f"Score: {self.player_one.number_of_wins} to {self.player_two.number_of_wins}\n"
                                    f"{player_turn.name}: Make your choice!\n"
                                    f"1: rock\n"
-                                   f"2. paper\n"
-                                   f"3. scissors\n"
-                                   f"4. lizard\n"
-                                   f"5. spock\n")) - 1
+                                   f"2: paper\n"
+                                   f"3: scissors\n"
+                                   f"4: lizard\n"
+                                   f"5: spock\n")) - 1
             player_turn.choice = player_turn.gestures[user_input]
             assert user_input >= 0
         except:
@@ -69,8 +69,8 @@ class Play:
         print("\n" * 100)
 
     def results(self):
-        print(f"{self.player_one.name}'s choice: {self.player_one.choice}\n"
-              f"{self.player_two.name}'s choice: {self.player_two.choice}")
+        print(f"{self.player_one.name} chooses: {self.player_one.choice}\n"
+              f"{self.player_two.name} chooses: {self.player_two.choice}")
         if self.player_one.choice == self.player_two.choice:
             print("Draw! Go again!")
         else:
