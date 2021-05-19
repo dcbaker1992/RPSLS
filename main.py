@@ -5,6 +5,6 @@ if __name__ == '__main__':
     while again:
         game = Play()
         game.start_game()
-        user_input = input("\nPlay again? yes or no")
+        user_input = input("Play again? yes or no")
         if user_input != "yes":
             again = False

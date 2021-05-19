@@ -5,7 +5,7 @@ from gestures import Gestures
 
 class Play:
     def __init__(self):
-        self.player_one = Human(input("Enter Player 1 Name"))
+        self.player_one = Human(input("Enter Player 1 Name:"))
         self.player_two = Computer()
         self.round = 1
 
@@ -19,7 +19,7 @@ class Play:
             if self.player_two.name == "Player 2":
                 self.player_choice(self.player_two)
             else:
-                self.computer_choice()
+                self.comp_turn()
             self.results()
         self.show_winner()
 
@@ -48,7 +48,7 @@ class Play:
             print("Please Enter the Number of Rounds")
             return self.rounds()
 
-    def computer_choice(self):
+    def comp_turn(self):
         self.player_two.throw_gesture()
 
     def player_choice(self, player_turn):
@@ -83,15 +83,15 @@ class Play:
         word = gesture_one.result(self.player_one.choice, self.player_two.choice)
         if word != "None":
             self.player_one.number_of_wins += 1
-            self.display_round_results(self.player_one.name, self.player_one.choice, self.player_two.name,
-                                       self.player_two.choice, word)
+            self.display_results(self.player_one.name, self.player_one.choice, self.player_two.name,
+                                 self.player_two.choice, word)
         else:
             self.player_two.number_of_wins += 1
             word = gesture_two.result(self.player_two.choice, self.player_one.choice)
-            self.display_round_results(self.player_two.name, self.player_two.choice, self.player_one.name,
-                                       self.player_one.choice, word)
+            self.display_results(self.player_two.name, self.player_two.choice, self.player_one.name,
+                                 self.player_one.choice, word)
 
-    def display_round_results(self, winner, winner_choice, loser, loser_choice, word):
+    def display_results(self, winner, winner_choice, loser, loser_choice, word):
         print(f"{winner}'s {winner_choice} {word} {loser}'s {loser_choice}")
 
     def show_winner(self):
